@@ -8,8 +8,9 @@ jobs:
   build:
     # операционная система для работы воркфлоу
     runs-on: ubuntu-latest
-    steps: # список шагов, которые надо выполнить
-      # экшен — выполняет какую-то задачу
+    steps:
+      - name: Checkout
+        id: checkout
       # checkout — клонирует репозиторий
       - uses: actions/checkout@v4
       # run – произвольная bash-команда
@@ -18,4 +19,4 @@ jobs:
           make setup
           make test
           make lint
-      - uses: actions/hexlet-components/hello-from-hexlet-action@release
+      - uses: hexlet-components/hello-from-hexlet-action@release
